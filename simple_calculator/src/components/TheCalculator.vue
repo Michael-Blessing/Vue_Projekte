@@ -4,10 +4,10 @@
             <h1>Simple Calculator</h1>
             <input v-model="currentValue"/>
             <div class="row">
-                <simple-button class="btn" beschriftung="+" @calculate="calculate"></simple-button>
-                <simple-button class="btn" beschriftung="-" @calculate="calculate"></simple-button>
-                <simple-button class="btn" beschriftung="*" @calculate="calculate"></simple-button>
-                <simple-button class="btn" beschriftung="/" @calculate="calculate"></simple-button>
+                <simple-button class="btn" beschriftung="+" @calculate="calculate" :class="{ active: previousOperator === '+' }"></simple-button>
+                <simple-button class="btn" beschriftung="-" @calculate="calculate" :class="{ active: previousOperator === '-' }"></simple-button>
+                <simple-button class="btn" beschriftung="*" @calculate="calculate" :class="{ active: previousOperator === '*' }"></simple-button>
+                <simple-button class="btn" beschriftung="/" @calculate="calculate" :class="{ active: previousOperator === '/' }"></simple-button>
             </div>
             <simple-button id="large" class="btn" beschriftung="=" @calculate="calculate"></simple-button>
        </div>
@@ -45,6 +45,7 @@ export default {
                 } else if(this.previousOperator === "/") {
                     this.currentValue = this.previousValue / parseInt(this.currentValue);
                 }
+                this.previousOperator = '';
             } else {
                 console.log("Falsche Beschriftung");
             }
@@ -113,6 +114,10 @@ export default {
         text-align:center;
         font-size:2em;
         font-weight: 600;
+    }
+    .active {
+        background: #023047 !important;
+        color: #219ebc;
     }
 
 </style>
