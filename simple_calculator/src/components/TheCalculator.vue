@@ -26,6 +26,7 @@ export default {
         return {
             previousValue: 0,
             currentValue: "",
+            previousOperator: ""
         }
     },
     methods: {
@@ -34,8 +35,17 @@ export default {
             if(beschriftung === "+" | beschriftung === "-" | beschriftung === "*" | beschriftung === "/") {
                 this.previousValue = parseInt(this.currentValue);
                 this.currentValue = "";
+                this.previousOperator = beschriftung;
             } else {
-                this.currentValue = this.previousValue + parseInt(this.currentValue);
+                if(this.previousOperator === "+") {
+                    this.currentValue = this.previousValue + parseInt(this.currentValue);
+                } else if(this.previousOperator === "-") {
+                    this.currentValue = this.previousValue - parseInt(this.currentValue);
+                } else if(this.previousOperator === "*") {
+                    this.currentValue = this.previousValue * parseInt(this.currentValue);
+                } else if(this.previousOperator === "/") {
+                    this.currentValue = this.previousValue / parseInt(this.currentValue);
+                }
             }
         }
     }
