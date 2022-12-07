@@ -31,12 +31,11 @@ export default {
     },
     methods: {
         calculate(beschriftung) {
-            console.log(beschriftung);
             if(beschriftung === "+" | beschriftung === "-" | beschriftung === "*" | beschriftung === "/") {
                 this.previousValue = parseInt(this.currentValue);
                 this.currentValue = "";
                 this.previousOperator = beschriftung;
-            } else {
+            } else if(beschriftung === "=") {
                 if(this.previousOperator === "+") {
                     this.currentValue = this.previousValue + parseInt(this.currentValue);
                 } else if(this.previousOperator === "-") {
@@ -46,6 +45,8 @@ export default {
                 } else if(this.previousOperator === "/") {
                     this.currentValue = this.previousValue / parseInt(this.currentValue);
                 }
+            } else {
+                console.log("Falsche Beschriftung");
             }
         }
     }
