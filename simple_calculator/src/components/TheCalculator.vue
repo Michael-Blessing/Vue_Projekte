@@ -106,7 +106,7 @@ export default {
     #large {
         margin-top:15px;
         width:80vw;
-        border: 1px solid var(--font-color);
+        border: 2px solid var(--font-color);
         height:10vh;
         background: #219ebc;
         padding:20px;
