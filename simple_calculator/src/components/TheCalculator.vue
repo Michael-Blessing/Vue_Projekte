@@ -84,14 +84,14 @@ export default {
         width:79.7vw;
         height:10vh;
         padding:0px;
-        margin-bottom:15px;
+        margin-bottom:20px;
         border: 2px solid var(--font-color);
         font-size:2em;
     }
     .row {
         display:flex;
         flex-direction: row;
-        gap:20px;
+        gap:30px;
     }
     .row > .btn {
         border: 2px solid var(--font-color);
@@ -104,7 +104,7 @@ export default {
         font-weight: 600;
     }
     #large {
-        margin-top:15px;
+        margin-top:20px;
         width:80vw;
         border: 2px solid var(--font-color);
         height:10vh;
