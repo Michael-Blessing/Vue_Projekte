@@ -88,6 +88,7 @@ export default {
         margin-bottom:20px;
         border: 2px solid var(--font-color);
         font-size:2em;
+        text-align:right;
     }
     .row {
         display:flex;
